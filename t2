@@ -1,0 +1,16 @@
+import pandas as pd
+from sklearn.cluster import KMeans
+import matplotlib.pyplot as plt
+
+data = pd.DataFrame({
+    'AnnualIncome': [15, 16, 17, 50, 52, 53, 90, 92, 95],
+    'SpendingScore': [39, 40, 42, 60, 61, 59, 10, 12, 11]
+})
+
+kmeans = KMeans(n_clusters=3)
+data['Cluster'] = kmeans.fit_predict(data)
+
+plt.scatter(data['AnnualIncome'], data['SpendingScore'], c=data['Cluster'])
+plt.xlabel("Income")
+plt.ylabel("Spending Score")
+plt.show()

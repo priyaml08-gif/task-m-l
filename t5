@@ -1,0 +1,11 @@
+# Pretend model output
+predicted_food = "Burger"
+
+food_calories = {
+    "Burger": 295,
+    "Pizza": 266,
+    "Apple": 52
+}
+
+print("Food:", predicted_food)
+print("Estimated Calories:", food_calories[predicted_food])
